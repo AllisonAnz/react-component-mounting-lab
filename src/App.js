@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Timer from './Timer'
 
 class App extends Component {
-
+  //the multiTimer allows users to start multiple one-second timers
   //no props being used here, so we can use the shorthand declaration of state
   state = {
     timerIDs: []
@@ -11,12 +11,17 @@ class App extends Component {
 
 
   //Your code here:
-
-
-
-
-
-
+  //calls componentDidMount and adds a Timer
+  //App is top level so CDM will be invoked before any other child component even constructed
+  //CDM is reserved for taking initial action within an app
+  //this includes getting remote API data, setting cursor focus, or creating an interval/timeout
+  
+    //App comp. is keeping track of timers using an array of random ID numbs.
+    //this allows for easy removal or addition of Timer components
+    //CDM invokes the existing handleAddTimer class method (this.handleAddTimer())
+  componentDidMount() {
+    this.handleAddTimer()
+  }
 
 
 
